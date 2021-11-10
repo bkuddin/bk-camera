@@ -3,7 +3,7 @@ import { Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const DisplayCameras = ({ camera }) => {
-  const { name, model, brief, img, brand, options, price } = camera;
+  const { _id, name, model, brief, img, brand, options, price } = camera;
   return (
     <div>
       <Col>
@@ -51,7 +51,9 @@ const DisplayCameras = ({ camera }) => {
                 Starting at ${price}
               </span>
               <br />
-              <button className="bk-button">Buy Now</button>
+              <Link to={`/order/${_id}`}>
+                <button className="bk-button">Buy Now</button>
+              </Link>
             </span>
           </Card.Body>
         </Card>

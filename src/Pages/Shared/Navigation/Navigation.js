@@ -22,6 +22,9 @@ const Navigation = () => {
             <Nav.Link as={Link} to="/explore">
               Explore
             </Nav.Link>
+            <Nav.Link as={Link} to="/login">
+              Login
+            </Nav.Link>
 
             <Navbar.Text>
               Signed in as: <a href="#login">Mark Otto</a>

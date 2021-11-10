@@ -5,6 +5,8 @@ import Navigation from "./Pages/Shared/Navigation/Navigation";
 import Footer from "./Pages/Shared/Footer/Footer";
 import AddCameras from "./Admin/AddCameras/AddCameras";
 import Explore from "./Pages/Explore/Explore/Explore";
+import Order from "./Pages/Order/Order/Order";
+import Login from "./Pages/Login/Login/Login";
 
 function App() {
   return (
@@ -15,8 +17,14 @@ function App() {
           <Route path="/add-cameras">
             <AddCameras />
           </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
           <Route path="/explore">
             <Explore />
+          </Route>
+          <Route path="/order/:orderId">
+            <Order />
           </Route>
           <Route exact path="/">
             <Home />
