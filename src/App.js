@@ -7,34 +7,42 @@ import AddCameras from "./Admin/AddCameras/AddCameras";
 import Explore from "./Pages/Explore/Explore/Explore";
 import Order from "./Pages/Order/Order/Order";
 import Login from "./Pages/Login/Login/Login";
+import Register from "./Pages/Login/Register/Register";
+import AuthProvider from "./contexts/AuthProvider/AuthProvider";
+import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Navigation />
-        <Switch>
-          <Route path="/add-cameras">
-            <AddCameras />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/explore">
-            <Explore />
-          </Route>
-          <Route path="/order/:orderId">
-            <Order />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/home">
-            <Home />
-          </Route>
-        </Switch>
-        <Footer />
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Navigation />
+          <Switch>
+            <Route path="/add-cameras">
+              <AddCameras />
+            </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/explore">
+              <Explore />
+            </Route>
+            <PrivateRoute path="/order/:orderId">
+              <Order />
+            </PrivateRoute>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
+          </Switch>
+          <Footer />
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
