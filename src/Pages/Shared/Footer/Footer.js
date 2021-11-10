@@ -18,7 +18,7 @@ const Footer = () => {
             <img src={element2} alt="" />
           </Col>
         </Row>
-        <Row>
+        <Row xs={1} sm={1} md={4}>
           <Col>
             <h3>BK CAMERA</h3>
             <p>
