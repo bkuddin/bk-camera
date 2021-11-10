@@ -6,7 +6,7 @@ const Navigation = () => {
     <>
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand href="#home">BK CAMERA</Navbar.Brand>
 
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">

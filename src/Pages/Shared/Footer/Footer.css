@@ -1,0 +1,17 @@
+.footer {
+  background-color: #2f2e33;
+  color: white;
+}
+
+.copyright {
+  background-color: #0f0f11;
+  padding: 1%;
+}
+
+.title {
+  text-align: center;
+}
+
+.list-unstyled a {
+  text-decoration: none;
+}
