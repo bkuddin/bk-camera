@@ -10,6 +10,7 @@ import Login from "./Pages/Login/Login/Login";
 import Register from "./Pages/Login/Register/Register";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         <Router>
           <Navigation />
           <Switch>
+            <PrivateRoute path="/dash-board">
+              <Dashboard />
+            </PrivateRoute>
             <Route path="/add-cameras">
               <AddCameras />
             </Route>

@@ -1,0 +1,16 @@
+/* .slide-content {
+  border: 1px solid rgb(219, 218, 218);
+} */
+
+/* .review-text {
+} */
+
+.reviews-header {
+  background-image: url(../../../images/reviews-cover.jpg);
+  height: 60vh;
+  background-size: cover;
+}
+
+.user-photo {
+  width: 20%;
+}

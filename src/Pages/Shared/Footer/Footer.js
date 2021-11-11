@@ -2,20 +2,17 @@ import React from "react";
 import "./Footer.css";
 import { Col, Container, Row } from "react-bootstrap";
 
-// FontAwesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCamera, faCoffee } from "@fortawesome/free-solid-svg-icons";
+// React Icons
+import { FaFacebookSquare, FaTwitterSquare } from "react-icons/fa";
 
 const Footer = () => {
-  const element = <FontAwesomeIcon icon={faCamera} />;
-  const element2 = <FontAwesomeIcon icon={faCoffee} />;
   return (
     <div>
       <Container className="footer" fluid>
         <Row>
           <Col>
-            <img src={element} alt="" />
-            <img src={element2} alt="" />
+            <FaFacebookSquare />
+            <FaTwitterSquare />
           </Col>
         </Row>
         <Row xs={1} sm={1} md={4}>

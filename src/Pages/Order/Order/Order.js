@@ -29,6 +29,9 @@ const Order = () => {
   const onSubmit = (data) => {
     console.log(data);
     data.status = "Pending";
+    data.brand = `${order.brand}`;
+    data.model = `${order.model}`;
+    data.img = `${order.img}`;
     fetch("http://localhost:5000/orders", {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -45,6 +48,8 @@ const Order = () => {
 
   ///   React Hook end
 
+  // Step 3: Get Data from Specific user via email, Check "My Order Page"
+
   return (
     <div>
       <h3>
@@ -58,7 +63,7 @@ const Order = () => {
 
       <Container>
         <Row>
-          {/* First Column */}
+          {/* First Column POST Method */}
           <Col className="booking" sm={12} md={6}>
             <form className="booking-form" onSubmit={handleSubmit(onSubmit)}>
               <input defaultValue={user.displayName} {...register("name")} />
@@ -94,7 +99,7 @@ const Order = () => {
             </form>
           </Col>
 
-          {/* Second Column */}
+          {/* Second Column GET Method (Via Fetch)  */}
           <Col sm={12} md={6}>
             <h4>{order.brand}</h4>
             <h3>{order.model}</h3>

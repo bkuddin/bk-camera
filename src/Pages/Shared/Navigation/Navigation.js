@@ -25,7 +25,14 @@ const Navigation = () => {
               Explore
             </Nav.Link>
             {user?.email ? (
-              <Button onClick={logOut}>Log Out</Button>
+              <div>
+                <Link style={{ textDecoration: "none" }} to="/dash-board">
+                  <button className="bk-button">Dashboard</button>
+                </Link>
+                <button className="bk-button" onClick={logOut}>
+                  Log Out
+                </button>
+              </div>
             ) : (
               <Nav.Link as={Link} to="/login">
                 Login
