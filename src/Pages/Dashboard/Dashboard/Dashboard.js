@@ -1,6 +1,17 @@
 import React from "react";
 import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 
+// React Fontawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTachometerAlt,
+  faComments,
+  faCamera,
+  faTasks,
+  faUserShield,
+  faList,
+} from "@fortawesome/free-solid-svg-icons";
+
 import "./Dashboard.css";
 import AddCameras from "../../../Admin/AddCameras/AddCameras";
 import MakeReview from "../../../User/MakeReview/MakeReview";
@@ -13,37 +24,56 @@ import { Col, Container, Row } from "react-bootstrap";
 
 const Dashbaord = () => {
   let { path, url } = useRouteMatch();
-  const { user, admin } = useAuth();
+  const { admin } = useAuth();
+
+  const dashBoardIcon = <FontAwesomeIcon icon={faTachometerAlt} />;
+  const reviewIcon = <FontAwesomeIcon icon={faComments} />;
+  const cameraIcon = <FontAwesomeIcon icon={faCamera} />;
+  const manageIcon = <FontAwesomeIcon icon={faTasks} />;
+  const adminIcon = <FontAwesomeIcon icon={faUserShield} />;
+  const listIcon = <FontAwesomeIcon icon={faList} />;
 
   return (
     <>
       <Container fluid>
         <Row className="row">
           <Col md={3}>
+            <h5 style={{ padding: "10%", backgroundColor: "#FFEE00" }}>
+              {dashBoardIcon}Dashboard
+            </h5>
             <div className="dashboard">
-              <h5>Dashboard</h5>
-              <Link to={`${url}`}>
-                <li className="dashboard-menu mt-5">Book</li>
-              </Link>
-
               <Link to={`${url}/my-order`}>
-                <li className="dashboard-menu mt-5">Order List</li>
+                <li className="dashboard-menu ">
+                  <span style={{ marginRight: "2%" }}>{listIcon}</span> Order
+                  List
+                </li>
               </Link>
 
               <Link to={`${url}/make-review`}>
-                <li className="dashboard-menu mt-5">Review</li>
+                <li className="dashboard-menu ">
+                  <span style={{ marginRight: "2%" }}>{reviewIcon}</span>Review
+                </li>
               </Link>
               <div className="admin-dashboard">
                 {admin && (
                   <div>
                     <Link to={`${url}/add-cameras`}>
-                      <li className="dashboard-menu">Add Service</li>
-                    </Link>
-                    <Link to={`${url}/make-admin`}>
-                      <li className="dashboard-menu">Make Admin</li>
+                      <li className="dashboard-menu">
+                        <span style={{ marginRight: "2%" }}>{cameraIcon}</span>{" "}
+                        Add Cameras
+                      </li>
                     </Link>
                     <Link to={`${url}/manage-cameras`}>
-                      <li className="dashboard-menu">Manage Service</li>
+                      <li className="dashboard-menu">
+                        <span style={{ marginRight: "2%" }}>{manageIcon}</span>{" "}
+                        Manage Cameras
+                      </li>
+                    </Link>
+                    <Link to={`${url}/make-admin`}>
+                      <li className="dashboard-menu">
+                        <span style={{ marginRight: "2%" }}>{adminIcon} </span>{" "}
+                        Make Admin
+                      </li>
                     </Link>
                   </div>
                 )}

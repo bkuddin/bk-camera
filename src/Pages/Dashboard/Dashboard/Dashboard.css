@@ -8,7 +8,16 @@
 .dashboard-menu {
   list-style: none;
   margin-top: 10px;
+  text-decoration: none;
+  color: white;
+  padding: 5%;
+}
+
+a {
+  text-decoration: none;
+  text-align: left;
 }
 .dashboard-menu:hover {
-  color: cyan;
+  background-color: #ffee00;
+  color: black;
 }
