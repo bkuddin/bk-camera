@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 
 import "./Dashboard.css";
@@ -13,21 +13,8 @@ import { Col, Container, Row } from "react-bootstrap";
 
 const Dashbaord = () => {
   let { path, url } = useRouteMatch();
-  const { user } = useAuth();
-  const [isAdmi, setIsAdmin] = useState(false);
+  const { user, admin } = useAuth();
 
-  useEffect(() => {
-    fetch(``)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data[0]?.role === "admin") {
-          setIsAdmin(true);
-        } else {
-          setIsAdmin(false);
-        }
-      });
-  }, [user?.email]);
-  console.log(isAdmi);
   return (
     <>
       <Container fluid>
@@ -47,17 +34,19 @@ const Dashbaord = () => {
                 <li className="dashboard-menu mt-5">Review</li>
               </Link>
               <div className="admin-dashboard">
-                {isAdmi && (
-                  <Link to={`${url}/add-cameras`}>
-                    <li className="dashboard-menu">Add Service</li>
-                  </Link>
+                {admin && (
+                  <div>
+                    <Link to={`${url}/add-cameras`}>
+                      <li className="dashboard-menu">Add Service</li>
+                    </Link>
+                    <Link to={`${url}/make-admin`}>
+                      <li className="dashboard-menu">Make Admin</li>
+                    </Link>
+                    <Link to={`${url}/manage-cameras`}>
+                      <li className="dashboard-menu">Manage Service</li>
+                    </Link>
+                  </div>
                 )}
-                <Link to={`${url}/make-admin`}>
-                  <li className="dashboard-menu">Make Admin</li>
-                </Link>
-                <Link to={`${url}/manage-cameras`}>
-                  <li className="dashboard-menu">Manage Service</li>
-                </Link>
               </div>
             </div>
           </Col>

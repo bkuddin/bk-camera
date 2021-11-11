@@ -18,6 +18,7 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [authError, setAuthError] = useState("");
   const auth = getAuth();
+  const [admin, setAdmin] = useState(false);
 
   //   Register User
   const registerUser = (email, password, name, history) => {
@@ -27,6 +28,8 @@ const useFirebase = () => {
         setAuthError("");
         const newUser = { email, displayName: name };
         setUser(newUser);
+        // Save user to Database
+        saveUser(email, name, "POST");
         // Send name to firebase after creation
         updateProfile(auth.currentUser, {
           displayName: name,
@@ -76,6 +79,14 @@ const useFirebase = () => {
     return () => unsubscribed;
   }, []);
 
+  // useEffect for Admin
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => setAdmin(data.admin));
+  }, [user.email]);
+
   //   Sign out
 
   const logOut = () => {
@@ -90,8 +101,19 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
+  // Save user (It should be POST method but I will include Google sign in in future, that is why I apply method)
+  const saveUser = (email, displayName, method) => {
+    const user = { email, displayName };
+    fetch("http://localhost:5000/users", {
+      method: method,
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(user),
+    }).then();
+  };
+
   return {
     user,
+    admin,
     isLoading,
     authError,
     registerUser,
