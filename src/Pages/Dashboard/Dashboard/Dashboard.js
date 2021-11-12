@@ -22,6 +22,8 @@ import MyOrder from "../../../User/MyOrder/MyOrder";
 import useAuth from "../../../hooks/useAuth";
 import { Col, Container, Row } from "react-bootstrap";
 
+import ManageOrders from "../../../Admin/ManageOrders/ManageOrders";
+
 const Dashbaord = () => {
   let { path, url } = useRouteMatch();
   const { admin } = useAuth();
@@ -57,6 +59,12 @@ const Dashbaord = () => {
               <div className="admin-dashboard">
                 {admin && (
                   <div>
+                    <Link to={`${url}/manage-orders`}>
+                      <li className="dashboard-menu">
+                        <span style={{ marginRight: "2%" }}>{cameraIcon}</span>{" "}
+                        Manage Orders
+                      </li>
+                    </Link>
                     <Link to={`${url}/add-cameras`}>
                       <li className="dashboard-menu">
                         <span style={{ marginRight: "2%" }}>{cameraIcon}</span>{" "}
@@ -90,6 +98,9 @@ const Dashbaord = () => {
               </Route>
               <Route exact path={`${path}/my-order`}>
                 <MyOrder></MyOrder>
+              </Route>
+              <Route exact path={`${path}/manage-orders`}>
+                <ManageOrders></ManageOrders>
               </Route>
               <Route exact path={`${path}/make-admin`}>
                 <MakeAdmin></MakeAdmin>
