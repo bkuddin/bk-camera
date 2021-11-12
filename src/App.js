@@ -11,6 +11,7 @@ import Register from "./Pages/Login/Register/Register";
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import ManageCamerasUpdate from "./Admin/ManageCamerasUpdate/ManageCamerasUpdate";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
             <PrivateRoute path="/dash-board">
               <Dashboard />
             </PrivateRoute>
+            <Route path="/manage-cameras-update/:updateId">
+              <ManageCamerasUpdate />
+            </Route>
             <Route path="/add-cameras">
               <AddCameras />
             </Route>

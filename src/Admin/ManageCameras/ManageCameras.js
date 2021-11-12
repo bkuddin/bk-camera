@@ -52,7 +52,7 @@ const ManageCameras = () => {
                   Delete
                 </button>{" "}
                 <br />
-                <Link to={`/update-cameras/${camera._id}`}>
+                <Link to={`/manage-cameras-update/${camera._id}`}>
                   <button className="btn btn-success">Update</button>
                 </Link>
                 <br />
