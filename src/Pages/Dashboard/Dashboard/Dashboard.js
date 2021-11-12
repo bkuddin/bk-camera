@@ -23,6 +23,7 @@ import useAuth from "../../../hooks/useAuth";
 import { Col, Container, Row } from "react-bootstrap";
 import ManageCameras from "../../../Admin/ManageCameras/ManageCameras";
 import ManageOrders from "../../../Admin/ManageOrders/ManageOrders";
+import Payment from "../../../Admin/Payment/Payment";
 
 const Dashbaord = () => {
   let { path, url } = useRouteMatch();
@@ -54,6 +55,11 @@ const Dashbaord = () => {
               <Link to={`${url}/make-review`}>
                 <li className="dashboard-menu ">
                   <span style={{ marginRight: "2%" }}>{reviewIcon}</span>Review
+                </li>
+              </Link>
+              <Link to={`${url}/payment`}>
+                <li className="dashboard-menu ">
+                  <span style={{ marginRight: "2%" }}>{reviewIcon}</span>Payment
                 </li>
               </Link>
               <div className="admin-dashboard">
@@ -95,6 +101,9 @@ const Dashbaord = () => {
               </Route>
               <Route exact path={`${path}/make-review`}>
                 <MakeReview></MakeReview>
+              </Route>
+              <Route exact path={`${path}/payment`}>
+                <Payment></Payment>
               </Route>
               <Route exact path={`${path}/my-order`}>
                 <MyOrder></MyOrder>
