@@ -57,7 +57,12 @@ const ManageOrders = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((result) => console.log(result));
+      .then((result) => {
+        if (result.modifiedCount) {
+          console.log(result);
+          alert("Are you sure you want to permanently cancel this package?");
+        }
+      });
   };
 
   // Handle Status Update end;
