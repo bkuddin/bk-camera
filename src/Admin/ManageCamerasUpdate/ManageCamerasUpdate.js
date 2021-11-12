@@ -8,7 +8,7 @@ const ManageCamerasUpdate = () => {
 
   //   Step 1: Get all Cameras
 
-  //   fetch(`http://localhost:5000/allCameras/${updateId}`)
+  //   fetch(`https://rocky-lowlands-76183.herokuapp.com/allCameras/${updateId}`)
   //     .then((res) => res.json())
   //     .then((data) => setCameras(data));
 
@@ -16,7 +16,7 @@ const ManageCamerasUpdate = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     // console.log(data);
-    fetch(`http://localhost:5000/allCameras/${updateId}`, {
+    fetch(`https://rocky-lowlands-76183.herokuapp.com/allCameras/${updateId}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

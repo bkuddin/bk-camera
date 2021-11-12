@@ -8,14 +8,14 @@ const ManageCameras = () => {
 
   // Step 1: Get all cameras to show
   useEffect(() => {
-    fetch("http://localhost:5000/allCameras")
+    fetch("https://rocky-lowlands-76183.herokuapp.com/allCameras")
       .then((res) => res.json())
       .then((data) => setcameras(data));
   }, [isDeleted]);
 
   //   Handle Delete Button
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/allCameras/${id}`, {
+    fetch(`https://rocky-lowlands-76183.herokuapp.com/allCameras/${id}`, {
       method: "DELETE",
       headers: { "content-type": "application/json" },
     })

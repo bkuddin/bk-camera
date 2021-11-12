@@ -13,7 +13,7 @@ const MyOrder = () => {
 
   // Step 3: (from Order page)  Get Data from Specific user via email
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${email}`)
+    fetch(`https://rocky-lowlands-76183.herokuapp.com/orders/${email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [isDeleted]);
@@ -23,7 +23,7 @@ const MyOrder = () => {
 
   // Step 4: Handle Delete Button
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/orders/${id}`, {
+    fetch(`https://rocky-lowlands-76183.herokuapp.com/orders/${id}`, {
       method: "DELETE",
       headers: { "content-type": "application/json" },
     })

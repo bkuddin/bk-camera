@@ -7,13 +7,15 @@ const AddCameras = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    axios.post("http://localhost:5000/addCameras", data).then((res) => {
-      console.log(res);
-      if (res.data.insertedId) {
-        alert("Data added, Successfully!");
-        reset();
-      }
-    });
+    axios
+      .post("https://rocky-lowlands-76183.herokuapp.com/addCameras", data)
+      .then((res) => {
+        console.log(res);
+        if (res.data.insertedId) {
+          alert("Data added, Successfully!");
+          reset();
+        }
+      });
   };
   return (
     <div className="add-cameras">

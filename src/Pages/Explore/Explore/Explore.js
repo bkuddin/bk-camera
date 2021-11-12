@@ -7,7 +7,7 @@ import "./Explore.css";
 const Explore = () => {
   const [cameras, setCameras] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allCameras")
+    fetch("https://rocky-lowlands-76183.herokuapp.com/allCameras")
       .then((res) => res.json())
       .then((data) => setCameras(data));
   }, []);

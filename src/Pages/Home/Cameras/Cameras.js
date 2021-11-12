@@ -10,7 +10,7 @@ const Cameras = () => {
   const element = <FontAwesomeIcon icon={faArrowCircleRight} />;
   const [cameras, setCameras] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/cameras")
+    fetch("https://rocky-lowlands-76183.herokuapp.com/cameras")
       .then((res) => res.json())
       .then((data) => setCameras(data));
   }, []);

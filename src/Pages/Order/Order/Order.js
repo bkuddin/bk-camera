@@ -12,7 +12,7 @@ const Order = () => {
   const [order, setOrder] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allCameras/${orderId}`)
+    fetch(`https://rocky-lowlands-76183.herokuapp.com/allCameras/${orderId}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, []);
@@ -32,7 +32,7 @@ const Order = () => {
     data.brand = `${order.brand}`;
     data.model = `${order.model}`;
     data.img = `${order.img}`;
-    fetch("http://localhost:5000/orders", {
+    fetch("https://rocky-lowlands-76183.herokuapp.com/orders", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

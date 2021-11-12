@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
@@ -18,11 +18,11 @@ const Navigation = () => {
             <Nav.Link as={Link} to="/home">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/">
-              Features
-            </Nav.Link>
             <Nav.Link as={Link} to="/explore">
               Explore
+            </Nav.Link>
+            <Nav.Link as={Link} to="/register">
+              Register
             </Nav.Link>
             {user?.email ? (
               <div>
