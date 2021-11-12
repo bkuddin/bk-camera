@@ -10,6 +10,7 @@ import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import userPhoto from "../../../images/photo-icon.png";
+import Rating from "react-rating";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -48,7 +49,15 @@ const Reviews = () => {
 
               <div className="review-text">
                 <h5>{review.name}</h5>
-                <p>{review.text}</p>
+                <h6>{review.occupation}</h6>
+                <Rating
+                  style={{ color: "#DDCC00" }}
+                  emptySymbol="far fa-star"
+                  fullSymbol="fas fa-star"
+                  initialRating={review.star}
+                  readonly
+                ></Rating>
+                <p>{review.testimonial}</p>
               </div>
             </div>
           </SwiperSlide>

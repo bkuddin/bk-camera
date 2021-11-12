@@ -58,6 +58,15 @@ const MakeReview = () => {
               defaultValue=""
               {...register("occupation")}
             />
+
+            <input
+              type="number"
+              placeholder="Rating"
+              {...register("star")}
+              min="1"
+              max="5"
+            />
+
             <textarea
               className="text-area"
               placeholder="Tell us about your experience"
