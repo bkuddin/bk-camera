@@ -11,6 +11,7 @@ import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import userPhoto from "../../../images/photo-icon.png";
 import Rating from "react-rating";
+import { Col, Row } from "react-bootstrap";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -33,10 +34,9 @@ const Reviews = () => {
 
       <Swiper
         spaceBetween={50}
-        slidesPerView={3}
+        slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >

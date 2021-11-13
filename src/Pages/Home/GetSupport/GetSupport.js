@@ -11,7 +11,7 @@ const GetSupport = () => {
       <Container>
         <h2>Get Support</h2>
         <Row>
-          <Col className="border border-1 ">
+          <Col xs={12} sm={12} md={4} className="border border-1 ">
             <img src={icon1} alt="" />
             <h4>Product Support</h4>
             <p>
@@ -19,7 +19,7 @@ const GetSupport = () => {
               in locating what you want.
             </p>
           </Col>
-          <Col className="border border-1 mx-3">
+          <Col xs={12} sm={12} md={4} className="border border-1 ">
             <img src={icon2} alt="" />
             <h4>Product Registration</h4>
             <p>
@@ -27,7 +27,7 @@ const GetSupport = () => {
               information, register it.
             </p>
           </Col>
-          <Col className="border border-1">
+          <Col xs={12} sm={12} md={4} className="border border-1">
             <img src={icon3} alt="" />
             <h4>Software & Drivers</h4>
             <p>Discover compatible software and drivers for your product.</p>
