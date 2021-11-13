@@ -28,7 +28,7 @@ const Login = () => {
       <div className="login-form">
         <Form
           onSubmit={handleLoginSubmit}
-          className="w-50"
+          className="login-form"
           style={{ margin: "0 auto" }}
         >
           <Form.Group className="mb-3" controlId="formBasicEmail">

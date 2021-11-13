@@ -23,3 +23,14 @@
   left: 0;
   margin: auto;
 }
+
+@media only screen and (max-width: 688px) {
+  .login-form {
+    width: 100%;
+    height: 70vh;
+  }
+
+  Form input {
+    width: 100%;
+  }
+}
