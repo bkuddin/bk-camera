@@ -22,6 +22,7 @@ const ManageCameras = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.deletedCount) {
+          alert("Are you sure?");
           setIsDeleted(true);
         } else {
           setIsDeleted(false);
