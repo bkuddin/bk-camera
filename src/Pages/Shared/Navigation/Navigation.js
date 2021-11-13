@@ -17,7 +17,7 @@ const Navigation = () => {
         sticky="top"
       >
         <Container fluid>
-          <Navbar.Brand className="logo" as={Link} to="/home">
+          <Navbar.Brand className="logo" as={Link} to="/">
             <img style={{ width: "30%" }} src={logo} alt="" />
           </Navbar.Brand>
 
