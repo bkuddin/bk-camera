@@ -91,19 +91,19 @@ const Dashbaord = () => {
                         Make Admin
                       </li>
                     </Link>
-
-                    {/* LogOut */}
-
-                    <button
-                      className="bk-button dash-logout-button"
-                      onClick={logOut}
-                    >
-                      Log Out
-                    </button>
-
-                    {/* LogOut */}
                   </div>
                 )}
+
+                {/* LogOut */}
+
+                <button
+                  className="bk-button dash-logout-button"
+                  onClick={logOut}
+                >
+                  Log Out
+                </button>
+
+                {/* LogOut */}
               </div>
             </div>
           </Col>
