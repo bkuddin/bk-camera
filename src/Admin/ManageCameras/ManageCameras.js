@@ -46,14 +46,19 @@ const ManageCameras = () => {
                   </Card.Text>
                 </Card.Body>
                 <button
-                  className="btn btn-danger"
+                  className="bk-button"
                   onClick={() => handleDelete(camera._id)}
                 >
                   Delete
                 </button>{" "}
                 <br />
                 <Link to={`/manage-cameras-update/${camera._id}`}>
-                  <button className="btn btn-success">Update</button>
+                  <button
+                    style={{ backgroundColor: "#FFEE00", color: "black" }}
+                    className="bk-button"
+                  >
+                    Update
+                  </button>
                 </Link>
                 <br />
               </Card>

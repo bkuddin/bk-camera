@@ -1,9 +1,9 @@
 .dashboard {
   background-color: black;
   height: 100vh;
-
   color: white;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 .dashboard-menu {
   list-style: none;
