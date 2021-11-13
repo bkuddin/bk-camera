@@ -6,10 +6,10 @@ import "./ExploreBanner.css";
 const ExploreBanner = () => {
   return (
     <div className="banner">
-      <Container fluid>
+      <Container>
         <Row>
           <Col>
-            <img src={cover} alt="" />
+            <img style={{ width: "100%" }} src={cover} alt="" />
           </Col>
         </Row>
       </Container>

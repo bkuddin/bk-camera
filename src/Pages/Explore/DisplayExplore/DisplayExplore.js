@@ -9,6 +9,7 @@ const DisplayExplore = ({ camera }) => {
       <Col>
         <Card className="border-0 text-start">
           <Card.Img
+            className="camera-img"
             variant="top"
             src={img}
             style={{ width: "80%", margin: "0 auto" }}
