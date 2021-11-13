@@ -45,7 +45,7 @@ const MyOrder = () => {
         <Row>
           <Col sm={12} md={12}>
             <div>
-              <h2 className="order-tite">My order List</h2>
+              <h2 className="order-tite">Order List</h2>
               {orders.map((order) => (
                 <div className="order-list">
                   <div className="img">

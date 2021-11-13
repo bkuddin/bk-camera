@@ -10,6 +10,7 @@ import {
   faTasks,
   faUserShield,
   faList,
+  faMoneyCheckAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./Dashboard.css";
@@ -35,6 +36,7 @@ const Dashbaord = () => {
   const manageIcon = <FontAwesomeIcon icon={faTasks} />;
   const adminIcon = <FontAwesomeIcon icon={faUserShield} />;
   const listIcon = <FontAwesomeIcon icon={faList} />;
+  const payIcon = <FontAwesomeIcon icon={faMoneyCheckAlt} />;
 
   return (
     <>
@@ -59,7 +61,7 @@ const Dashbaord = () => {
               </Link>
               <Link to={`${url}/payment`}>
                 <li className="dashboard-menu ">
-                  <span style={{ marginRight: "2%" }}>{reviewIcon}</span>Payment
+                  <span style={{ marginRight: "2%" }}>{payIcon}</span>Payment
                 </li>
               </Link>
               <div className="admin-dashboard">
@@ -67,7 +69,7 @@ const Dashbaord = () => {
                   <div>
                     <Link to={`${url}/manage-orders`}>
                       <li className="dashboard-menu">
-                        <span style={{ marginRight: "2%" }}>{cameraIcon}</span>{" "}
+                        <span style={{ marginRight: "2%" }}>{manageIcon}</span>{" "}
                         Manage Orders
                       </li>
                     </Link>
