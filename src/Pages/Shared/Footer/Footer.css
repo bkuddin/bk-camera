@@ -1,15 +1,42 @@
 .footer {
-  background-color: #2f2e33;
+}
+
+.social-icons {
+  font-size: 30px;
+  color: white;
+  margin: 0 auto;
+}
+
+.social-icons a {
   color: white;
 }
 
-.copyright {
+.footer-text {
+  color: white;
+  text-align: left;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.footer-text a {
+  color: white;
+}
+
+.footer-section {
   background-color: #0f0f11;
-  padding: 1%;
+}
+
+.copyright {
+  background-color: #ffee00;
+  color: black;
+  padding-top: 1%;
+  margin: 0 auto;
+  height: 50px;
 }
 
 .title {
-  text-align: center;
 }
 
 .list-unstyled a {
@@ -17,4 +44,7 @@
 }
 
 @media only screen and (max-width: 688px) {
+  .footer-text {
+    text-align: center;
+  }
 }
