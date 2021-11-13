@@ -21,3 +21,19 @@ a {
   background-color: #ffee00;
   color: black;
 }
+
+.dash-logout-button {
+  background-color: #ffee00;
+  margin-top: 40px;
+  margin-left: -200px;
+}
+
+/* Responsive Design */
+
+@media only screen and (max-width: 688px) {
+  .dash-logout-button {
+    background-color: #ffee00;
+    margin-top: 40px;
+    margin-left: 0px !important;
+  }
+}

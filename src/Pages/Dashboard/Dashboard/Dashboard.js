@@ -28,7 +28,7 @@ import Payment from "../../../Admin/Payment/Payment";
 
 const Dashbaord = () => {
   let { path, url } = useRouteMatch();
-  const { admin } = useAuth();
+  const { admin, logOut } = useAuth();
 
   const dashBoardIcon = <FontAwesomeIcon icon={faTachometerAlt} />;
   const reviewIcon = <FontAwesomeIcon icon={faComments} />;
@@ -91,6 +91,17 @@ const Dashbaord = () => {
                         Make Admin
                       </li>
                     </Link>
+
+                    {/* LogOut */}
+
+                    <button
+                      className="bk-button dash-logout-button"
+                      onClick={logOut}
+                    >
+                      Log Out
+                    </button>
+
+                    {/* LogOut */}
                   </div>
                 )}
               </div>
