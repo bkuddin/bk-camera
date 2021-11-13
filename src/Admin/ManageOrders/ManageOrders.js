@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Table } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-
 import useAuth from "../../hooks/useAuth";
 import "./ManageOrders.css";
 
@@ -63,7 +61,7 @@ const ManageOrders = () => {
       .then((result) => {
         if (result.modifiedCount) {
           console.log(result);
-          alert("Are you sure you want to permanently cancel this package?");
+          alert("Are you sure you want to approve this order?");
         }
       });
   };
@@ -73,62 +71,75 @@ const ManageOrders = () => {
   return (
     <div>
       <h3>
-        <span style={{ backgroundColor: "#FFEE00", padding: "10px 20px" }}>
+        <span
+          style={{
+            backgroundColor: "#FFEE00",
+            padding: "10px 20px",
+            marginBottom: "20px",
+          }}
+        >
           Hello, {user.displayName}!
-        </span>{" "}
+        </span>
+        <br />
         <br />
         Kindly review the orders of clients and approved or delete them.
       </h3>
       <hr />
 
-      <div className="container">
-        <h1>All orders {orders.length}</h1>
+      <div>
+        <h2 className="order-tite">Order List</h2>
+        {orders.map((pd) => (
+          <div className="order-list">
+            <div className="img">
+              <img src={pd.img} alt="" />
+            </div>
 
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Client</th>
-              <th>Image</th>
-              <th>Model</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          {orders?.map((pd, index) => (
-            <tbody>
-              <tr>
-                <td>{index}</td>
-                <td>{pd.name}</td>
-                <td>
-                  <img style={{ width: "30%" }} src={pd.img} alt="" />
-                </td>
-                <td>{pd.model}</td>
-                <td>
-                  <form onSubmit={handleSubmit(onSubmit)}>
-                    <select
-                      onClick={() => handleOrderId(pd?._id)}
-                      {...register("status")}
-                    >
-                      <option value={pd?.status}>{pd?.status}</option>
-                      <option value="approve">approve</option>
-                    </select>
-                    <input type="submit" />
-                  </form>
-                </td>
-                <button
-                  onClick={() => handleDelete(pd._id)}
+            <div className="location">
+              <h4>{pd.model}</h4>
+            </div>
+            <div className="location">
+              <h4>{pd.name}</h4>
+              <p>{pd.email}</p>
+            </div>
+
+            <div
+              style={{
+                backgroundColor: "black",
+                padding: "1% 2%",
+                color: "white",
+              }}
+            >
+              {pd.status}
+            </div>
+            <div className="button-delete button">
+              <button
+                onClick={() => handleDelete(pd._id)}
+                className="bk-button"
+              >
+                Delete
+              </button>
+            </div>
+
+            <div className="button">
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <select
                   className="bk-button"
+                  onClick={() => handleOrderId(pd?._id)}
+                  {...register("status")}
                 >
-                  Delete
-                </button>
-              </tr>
-            </tbody>
-          ))}
-        </Table>
+                  <option value={pd?.status}>{pd?.status}</option>
+                  <option value="approve">approve</option>
+                </select>
+                <input
+                  style={{ backgroundColor: "#FFEE00" }}
+                  className="bk-button ms-2"
+                  type="submit"
+                />
+              </form>
+            </div>
+          </div>
+        ))}
       </div>
-
-      {/* Check 2nd style end */}
     </div>
   );
 };
