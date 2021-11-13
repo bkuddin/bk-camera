@@ -23,46 +23,37 @@ const Navigation = () => {
 
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
-            <Nav.Link
-              className="navlink"
-              style={{ marginLeft: "-100%" }}
-              as={Link}
-              to="/home"
-            >
+            <Nav.Link className="navlink navlink-home" as={Link} to="/home">
               Home
             </Nav.Link>
             <Nav.Link className="navlink" as={Link} to="/explore">
               Explore
             </Nav.Link>
-            <Nav.Link className="navlink" as={Link} to="/register">
-              Register
-            </Nav.Link>
+
             {user?.email ? (
               <div>
-                <Link
-                  className=""
-                  style={{ textDecoration: "none" }}
-                  to="/dash-board"
-                >
-                  <button
-                    style={{
-                      marginRight: "10px",
-                      backgroundColor: "black",
-                      color: "#FFEE00",
-                    }}
-                    className="bk-button"
-                  >
-                    Dashboard
-                  </button>
+                <Link style={{ textDecoration: "none" }} to="/dash-board">
+                  <button className="dash-button bk-button">Dashboard</button>
                 </Link>
-                <button className="bk-button" onClick={logOut}>
+                <button className="bk-button logout-button" onClick={logOut}>
                   Log Out
                 </button>
               </div>
             ) : (
-              <Nav.Link className="navlink" as={Link} to="/login">
-                Login
-              </Nav.Link>
+              <div>
+                <Nav.Link
+                  style={{ backgroundColor: "black", color: "white" }}
+                  className="navlink bk-button"
+                  as={Link}
+                  to="/register"
+                >
+                  Register
+                </Nav.Link>
+
+                <Nav.Link className="navlink" as={Link} to="/login">
+                  Login
+                </Nav.Link>
+              </div>
             )}
 
             <Navbar.Text className="ms-2">

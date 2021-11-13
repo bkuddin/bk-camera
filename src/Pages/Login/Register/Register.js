@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Alert, Button, Form, Spinner } from "react-bootstrap";
+import { Alert, Form, Spinner } from "react-bootstrap";
 import { NavLink, useHistory } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
+import "./Register.css";
 
 const Register = () => {
   const [loginData, setLoginData] = useState({});
@@ -28,15 +29,11 @@ const Register = () => {
     setLoginData(newLoginData);
   };
   return (
-    <div>
+    <div className="register-bg">
       {!isLoading && (
-        <Form
-          onSubmit={handleRegisterSubmit}
-          className="w-25"
-          style={{ margin: "0 auto" }}
-        >
+        <Form onSubmit={handleRegisterSubmit} className="register-form">
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label></Form.Label>
             <Form.Control
               name="name"
               onBlur={handleOnBlur}
@@ -45,7 +42,7 @@ const Register = () => {
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label></Form.Label>
             <Form.Control
               name="email"
               onBlur={handleOnBlur}
@@ -56,8 +53,8 @@ const Register = () => {
               We'll never share your email with anyone else.
             </Form.Text>
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
+          <Form.Group className="" controlId="formBasicPassword">
+            <Form.Label></Form.Label>
             <Form.Control
               name="password"
               onBlur={handleOnBlur}
@@ -65,8 +62,8 @@ const Register = () => {
               placeholder="Password"
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
+          <Form.Group className="" controlId="formBasicPassword">
+            <Form.Label></Form.Label>
             <Form.Control
               name="password2"
               onBlur={handleOnBlur}
@@ -74,18 +71,19 @@ const Register = () => {
               placeholder="ReType your password"
             />
           </Form.Group>
+          <button className="bk-button reg-button" type="submit">
+            Register
+          </button>
           <Form.Group>
             <NavLink to="/login" style={{ textDecoration: "none" }}>
-              <button className="border-0 mb-2 bk-button">
+              <button className="border-0 mt-2 bk-button reg-button">
                 Already Registerd? Please Login
               </button>
             </NavLink>
           </Form.Group>
-          <Button className="bk-button w-100" type="submit">
-            Register
-          </Button>
         </Form>
       )}
+
       {isLoading && <Spinner animation="border" variant="success" />}
       {user?.email && (
         <Alert
