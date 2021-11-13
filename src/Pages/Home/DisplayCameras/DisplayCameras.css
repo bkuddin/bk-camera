@@ -1,0 +1,12 @@
+.camera-img {
+  margin: 15px;
+  top: 0;
+  position: relative;
+  -webkit-transition: top 0.5s ease-out;
+  -moz-transition: top 0.5s ease-out;
+  -o-transition: top 0.5s ease-out;
+}
+
+.camera-img:hover {
+  top: -12px;
+}

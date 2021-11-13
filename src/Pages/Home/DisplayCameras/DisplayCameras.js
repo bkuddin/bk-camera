@@ -1,14 +1,16 @@
 import React from "react";
 import { Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "./DisplayCameras.css";
 
 const DisplayCameras = ({ camera }) => {
   const { _id, name, model, brief, img, brand, options, price } = camera;
   return (
     <div>
       <Col>
-        <Card className="border-0 text-start">
+        <Card className="border-0 text-start image-wrapper">
           <Card.Img
+            className="camera-img"
             variant="top"
             src={img}
             style={{ width: "80%", margin: "0 auto" }}

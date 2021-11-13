@@ -1,0 +1,23 @@
+.navlink {
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+}
+
+.navlink:hover {
+  color: #000;
+}
+
+.navlink::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s;
+}
+
+.navlink:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}

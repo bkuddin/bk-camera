@@ -3,6 +3,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import logo from "../../../images/logo-bk-camera.png";
+import "./Navigation.css";
 
 const Navigation = () => {
   const { user, logOut } = useAuth();
@@ -16,24 +17,33 @@ const Navigation = () => {
         sticky="top"
       >
         <Container fluid>
-          <Navbar.Brand as={Link} to="/home">
+          <Navbar.Brand className="logo" as={Link} to="/home">
             <img style={{ width: "30%" }} src={logo} alt="" />
           </Navbar.Brand>
 
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
-            <Nav.Link style={{ marginLeft: "-100%" }} as={Link} to="/home">
+            <Nav.Link
+              className="navlink"
+              style={{ marginLeft: "-100%" }}
+              as={Link}
+              to="/home"
+            >
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/explore">
+            <Nav.Link className="navlink" as={Link} to="/explore">
               Explore
             </Nav.Link>
-            <Nav.Link as={Link} to="/register">
+            <Nav.Link className="navlink" as={Link} to="/register">
               Register
             </Nav.Link>
             {user?.email ? (
               <div>
-                <Link style={{ textDecoration: "none" }} to="/dash-board">
+                <Link
+                  className=""
+                  style={{ textDecoration: "none" }}
+                  to="/dash-board"
+                >
                   <button
                     style={{
                       marginRight: "10px",
@@ -50,7 +60,7 @@ const Navigation = () => {
                 </button>
               </div>
             ) : (
-              <Nav.Link as={Link} to="/login">
+              <Nav.Link className="navlink" as={Link} to="/login">
                 Login
               </Nav.Link>
             )}
