@@ -1,3 +1,8 @@
+.review-section {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
 .reviews-header {
   background-image: url(../../../images/reviews-cover.jpg);
   height: 60vh;

@@ -3,7 +3,13 @@ import "./Reviews.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 // import Swiper core and required modules
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 // modules styles
@@ -11,7 +17,6 @@ import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import userPhoto from "../../../images/photo-icon.png";
 import Rating from "react-rating";
-import { Col, Row } from "react-bootstrap";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -23,11 +28,13 @@ const Reviews = () => {
       .then((data) => setReviews(data));
   }, []);
 
+  SwiperCore.use([Autoplay]);
+
   return (
     <div className="review-section">
       <div className="reviews-header"></div>
 
-      <h4>
+      <h4 style={{ marginTop: "3%" }}>
         We've sell more than 50 Thousands cameras for 30,506+ businesses like
         yours.
       </h4>
@@ -39,6 +46,7 @@ const Reviews = () => {
         pagination={{ clickable: true }}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
+        autoplay={{ delay: 3000 }}
       >
         {reviews.map((review) => (
           <SwiperSlide key={review._id}>
