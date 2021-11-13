@@ -72,7 +72,7 @@ const Footer = () => {
           <Row className="copyright">
             <Col>
               &copy; {new Date().getFullYear()} Copyright:
-              <a href="https://www.bkcamera.com"> BKcamera.com </a>
+              <a href="https://bk-camera.netlify.app/"> BK CAMERA</a>
             </Col>
           </Row>
         </Row>
