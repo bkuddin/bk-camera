@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Alert, Form } from "react-bootstrap";
+import "./MakeAdmin.css";
 
 const MakeAdmin = () => {
   const [email, setEmail] = useState("");
@@ -28,12 +29,12 @@ const MakeAdmin = () => {
   };
 
   return (
-    <div>
+    <div className="make-admin-section">
       <h2>Make Adming</h2>
 
       <Form
         onSubmit={handleAdminSubmit}
-        className="w-50"
+        className="w-50 "
         style={{ margin: "0 auto" }}
       >
         <Form.Group className="mb-3" controlId="formBasicEmail">
