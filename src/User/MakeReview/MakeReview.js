@@ -39,7 +39,7 @@ const MakeReview = () => {
   // Step 3: Get Data from Specific user via email, Check "My Order Page"
 
   return (
-    <div>
+    <div className="review-section">
       <h2>Make a review</h2>
 
       <Row className="review">
